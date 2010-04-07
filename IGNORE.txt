@@ -3,3 +3,6 @@
 collective.mtrsetup.egg-info
 build
 dist
+bin
+.installed.cfg
+develop-eggs/

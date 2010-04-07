@@ -1,0 +1,5 @@
+# created by: svn propset svn:ignore -F ./IGNORE.TXT .
+
+collective.mtrsetup.egg-info
+build
+dist

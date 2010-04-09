@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<import-steps>
+  <import-step id="mimetypes" version="20100407-01"
+               handler="collective.mtrsetup.handler.importMimetypes"
+               title="Mimetypes Registry">
+    Import mimetypes registry
+  </import-step>
+</import-steps>

@@ -4,11 +4,12 @@
   <!-- change a existing one -->
   <mimetype name="JPEG image" mimetypes="image/jpeg image/pjpeg"
             extensions="pjpg jpeg jpe jpg foo" globs="*.jpeg, *.jpg, *.jpe"
-            binary="True" />
+            icon_path="image.png" binary="True" />
 
   <!-- add a new one -->
   <mimetype name="Any type" mimetypes="image/any"
-            extensions="any" globs="*.any" binary="True" />
+            extensions="any" globs="*.any" binary="True"
+            icon_path="any.png" />
 
   <!-- remove a existing one -->
   <mimetype name="GIF image" mimetypes="image/gif"

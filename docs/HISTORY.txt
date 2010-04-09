@@ -1,7 +1,17 @@
 Changelog
 =========
 
-1.0a1dev (unreleased)
----------------------
 
-- Initial release
+1.0a1
+-----
+
+* Implemented exporting, added tests
+  [09.04.2010, jbaumann]
+  
+* Improved testing system
+  [09.04.2010, jbaumann]
+  
+* Initial implementation
+  [08.04.2010, jbaumann]
+  
+

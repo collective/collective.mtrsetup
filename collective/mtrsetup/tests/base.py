@@ -5,6 +5,8 @@ Plone's products are loaded, and a Plone site will be created. This
 happens at module level, which makes it faster to run each test, but
 slows down test runner startup.
 """
+from xml.dom.minidom import parseString
+from StringIO import StringIO
 
 from Products.Five import zcml
 from Products.Five import fiveconfigure
@@ -13,6 +15,10 @@ from Testing import ZopeTestCase as ztc
 
 from Products.PloneTestCase import PloneTestCase as ptc
 from Products.PloneTestCase.layer import onsetup
+
+from collective.mtrsetup.handler import MimetypesRegistryNodeAdapter
+from Products.GenericSetup.tests.common import DummyImportContext
+from Products.GenericSetup.tests.common import DummyExportContext
 
 # When ZopeTestCase configures Zope, it will *not* auto-load products
 # in Products/. Instead, we have to use a statement such as:
@@ -80,3 +86,35 @@ class FunctionalTestCase(ptc.FunctionalTestCase):
         self.portal.portal_membership.addMember('contributor',
                                                 'secret',
                                                 roles, [])
+
+def purge_registry(registry):
+    """ Deletes all mimetypes from the given mimetypes registry.
+    """
+    a = False
+    for type_ in registry.mimetypes():
+        registry.unregister(type_)
+
+def import_mimetypes_registry(registry, xml_filecontent):
+    """ Imports the given xml filecontent directly into the mimetypes registry
+    """
+    portal = registry.portal_url.getPortalObject()
+    tool = portal.portal_setup
+    imp = DummyImportContext(portal, purge=True, tool=tool)
+    doc = parseString(xml_filecontent)
+    node = doc.firstChild
+    adapter = MimetypesRegistryNodeAdapter(registry, imp)
+    adapter._importNode(node)
+    return imp.getLogger(adapter._LOGGER_ID)._messages
+
+def export_mimetypes_registry(registry):
+    """ Exports the mimetypes registry as xml string
+    """
+    portal = registry.portal_url.getPortalObject()
+    tool = portal.portal_setup
+    imp = DummyExportContext(portal, tool=tool)
+    adapter = MimetypesRegistryNodeAdapter(registry, imp)
+    adapter._doc.appendChild(adapter._exportNode())
+    writer = StringIO()
+    adapter._doc.writexml(writer, addindent='  ', newl='\n')
+    writer.seek(0)
+    return writer.read().strip()

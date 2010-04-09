@@ -1,19 +1,85 @@
-collective.mtrsetup is a GenericSetup extension that provides import / export support for the mimetypes_registry.
+collective.mtrsetup provides a GenericSetup extension for importing and exporting mimetypes
+to / from the mimetypes registry.
+
+Examples
+--------
+
+Here are some examples of how to use it.
+
+Setup some testing stuff:
+
+>>> from collective.mtrsetup.tests.base import purge_registry, import_mimetypes_registry, \
+...                                            export_mimetypes_registry
+>>> registry = self.portal.mimetypes_registry
+>>> purge_registry(registry)
+>>> len(registry.mimetypes())
+0
 
 
->>> mr = self.portal.mimetypes_registry
->>> pre_mimetypes = mr.mimetypes()[:]
+We can add new mimetypes with a simple mimetype tag in a *mimetypes.xml* in our generic setup
+profile:
 
->>> setup = self.portal.portal_setup
->>> profile_id = 'profile-collective.mtrsetup.tests:test'
->>> setup.runImportStepFromProfile(profile_id, 'mimetypes')
+>>> filedata = """
+... <?xml version="1.0"?>
+... <object name="mimetypes_registry" meta_type="MimeTypes Registry">
+...  <mimetype name="Any type" mimetypes="image/any"
+...            extensions="any" globs="*.any" binary="True"
+...            icon_path="any.png" />
+... </object>
+... """.strip()
+>>> import_mimetypes_registry(registry, filedata)
+[(20, 'mimetypes', 'Mimetype imported: <DOM Element: object at ...>')]
 
->>> post_mimetypes = mr.mimetypes()[:]
+Now we should be able to export the current configuration:
 
->>> new_mimetypes = list(set(post_mimetypes) - set(pre_mimetypes))
->>> deleted_mimetypes = list(set(pre_mimetypes) - set(post_mimetypes))
+>>> print export_mimetypes_registry(registry)
+<?xml version="1.0"?>
+<object name="mimetypes_registry" meta_type="MimeTypes Registry">
+  <mimetype name="Any type" binary="True" extensions="any" globs="*.any"
+      icon_path="any.png" mimetypes="image/any"/>
+</object>
 
->>> len(new_mimetypes)==1
-True
->>> len(deleted_mimetypes)==1
-True
+
+We can also just modify a existing one:
+
+>>> filedata = """
+... <object name="mimetypes_registry" meta_type="MimeTypes Registry">
+...  <mimetype name="Any type" mimetypes="image/any image/another" />
+... </object>
+... """.strip()
+>>> import_mimetypes_registry(registry, filedata)
+[(20, 'mimetypes', 'Mimetype imported: <DOM Element: object at ...>')]
+
+The above notiation just updates the mimetype record, where *image/any is the first
+mimetype*:
+
+>>> print export_mimetypes_registry(registry)
+<?xml version="1.0"?>
+<object name="mimetypes_registry" meta_type="MimeTypes Registry">
+  <mimetype name="Any type" binary="True" extensions="any" globs="*.any"
+      icon_path="any.png" mimetypes="image/any image/another"/>
+</object>
+
+
+
+Finally we can delete a mimetype by just adding the delete flag:
+>>> filedata = """
+... <object name="mimetypes_registry" meta_type="MimeTypes Registry">
+...  <mimetype name="Any type" mimetypes="image/any" delete="True" />
+... </object>
+... """.strip()
+>>> import_mimetypes_registry(registry, filedata)
+[(20, 'mimetypes', 'Mimetype imported: <DOM Element: object at ...>')]
+>>> print export_mimetypes_registry(registry)
+<?xml version="1.0"?>
+<object name="mimetypes_registry" meta_type="MimeTypes Registry"/>
+
+
+You have to add at least one mimetype, otherwise the import will fail:
+>>> filedata = """
+... <object name="mimetypes_registry" meta_type="MimeTypes Registry">
+...  <mimetype mimetypes="" />
+... </object>
+... """.strip()
+>>> import_mimetypes_registry(registry, filedata)
+[(30, 'mimetypes', u'Require attributes: "mimetypes" for <mimetype mimetypes=""/>'), (20, 'mimetypes', 'Mimetype imported: <DOM Element: object at ...>')]

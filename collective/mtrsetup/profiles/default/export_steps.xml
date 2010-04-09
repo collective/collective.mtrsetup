@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<export-steps>
+  <export-step id="mimetypes"
+               handler="collective.mtrsetup.handler.exportMimetypes"
+               title="Mimetypes Registry">
+    Export mimetypes registry.
+  </export-step>
+</export-steps>

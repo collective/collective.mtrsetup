@@ -3,7 +3,11 @@ import os
 
 version = '1.0a1'
 
-tests_require = ['zope.testing',]
+tests_require = [
+    'Plone',
+    'zope.testing',
+    'Products.PloneTestCase',
+    ]
 
 setup(name='collective.mtrsetup',
       version=version,

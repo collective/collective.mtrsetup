@@ -1,0 +1,19 @@
+collective.mtrsetup is a GenericSetup extension that provides import / export support for the mimetypes_registry.
+
+
+>>> mr = self.portal.mimetypes_registry
+>>> pre_mimetypes = mr.mimetypes()[:]
+
+>>> setup = self.portal.portal_setup
+>>> profile_id = 'profile-collective.mtrsetup.tests:test'
+>>> setup.runImportStepFromProfile(profile_id, 'mimetypes')
+
+>>> post_mimetypes = mr.mimetypes()[:]
+
+>>> new_mimetypes = list(set(post_mimetypes) - set(pre_mimetypes))
+>>> deleted_mimetypes = list(set(pre_mimetypes) - set(post_mimetypes))
+
+>>> len(new_mimetypes)==1
+True
+>>> len(deleted_mimetypes)==1
+True

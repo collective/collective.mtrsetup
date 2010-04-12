@@ -86,8 +86,8 @@ mimetype*:
 </object>
 
 
-
 Finally we can delete a mimetype by just adding the delete flag:
+
 >>> filedata = """
 ... <object name="mimetypes_registry" meta_type="MimeTypes Registry">
 ...  <mimetype name="Any type" mimetypes="image/any" delete="True" />
@@ -101,6 +101,7 @@ Finally we can delete a mimetype by just adding the delete flag:
 
 
 You have to add at least one mimetype, otherwise the import will fail:
+
 >>> filedata = """
 ... <object name="mimetypes_registry" meta_type="MimeTypes Registry">
 ...  <mimetype mimetypes="" />

@@ -3,6 +3,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.GenericSetup.utils import exportObjects
 from Products.GenericSetup.utils import importObjects
 from Products.GenericSetup.utils import XMLAdapterBase
+import re
 
 _FILENAME = 'mimetypes.xml'
 _NAME = 'mimetypes'
@@ -82,7 +83,8 @@ class MimetypesRegistryNodeAdapter(XMLAdapterBase):
         strval = node.getAttribute(attr).strip()
         if len(strval)==0:
             return default
-        values = strval.split(' ')
+        xpr = re.compile('[ \n]*')
+        values = xpr.split(strval)
         values = [vv.strip() for vv in values]
         values = [isinstance(vv, unicode) and vv or vv.decode('utf8')
                   for vv in values]

@@ -1,4 +1,5 @@
 <configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
            xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
            xmlns:five="http://namespaces.zope.org/five"
            xmlns:zcml="http://namespaces.zope.org/zcml">
@@ -16,12 +17,25 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="collective.mtrsetup"
+      title="collective.mtrsetup : mimetypes import / export support"
       directory="profiles/default"
       description="Install setup handler for collective.mtrsetup"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       for="Products.CMFCore.interfaces.ISiteRoot"
       />
 
+  <genericsetup:registerProfile
+      name="example"
+      title="collective.mtrsetup : example mimetypes"
+      directory="profiles/example"
+      description="Example profile wich adds OpenOffice and Office2007 mimetypes"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      for="Products.CMFCore.interfaces.ISiteRoot"
+      />
+
+  <browser:resourceDirectory
+      name="mtr-icons"
+      directory="icons"
+      />
 
 </configure>

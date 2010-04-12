@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<object name="mimetypes_registry" meta_type="MimeTypes Registry">
+
+
+  <!-- OPENOFFICE MIMETYPES -->
+  <!-- mimetypes: http://framework.openoffice.org/documentation/mimetypes/mimetypes.html -->
+  <!-- icons: http://ui.openoffice.org/VisualDesign/OOo30MimeType.html -->
+
+  <mimetype name="OpenDocument Text"
+            mimetypes="application/vnd.oasis.opendocument.text
+                       application/vnd.sun.xml.writer
+                       application/vnd.stardivision.writer
+                       application/x-starwriter"
+            extensions="odt sxw sdw"
+            globs="*.odt *.sxw *.sdw"
+            icon_path="/++resource++mtr-icons/odt.png"
+            binary="True"
+            />
+
+  <mimetype name="OpenDocument Text Template"
+            mimetypes="application/vnd.oasis.opendocument.text-template
+                       application/vnd.sun.xml.writer.template"
+            extensions="ott stw"
+            globs="*.ott *stw"
+            icon_path="/++resource++mtr-icons/ott.png"
+            binary="True"
+            />
+
+  <mimetype name="HTML Document Template"
+            mimetypes="application/vnd.oasis.opendocument.text-web"
+            extensions="oth"
+            globs="*.oth"
+            icon_path="/++resource++mtr-icons/oth.png"
+            binary="True"
+            />
+
+  <mimetype name="OpenDocument Master Document"
+            mimetypes="application/vnd.oasis.opendocument.text-master"
+            extensions="odm"
+            globs="*.odm"
+            icon_path="/++resource++mtr-icons/oo-empty.png"
+            binary="True"
+            />
+
+  <mimetype name="OpenDocument Drawing"
+            mimetypes="application/vnd.oasis.opendocument.graphics
+                       application/vnd.sun.xml.draw
+                       application/vnd.stardivision.draw
+                       application/x-stardraw"
+            extensions="odg sxd sda"
+            globs="*.odg *.sxd *.sda"
+            icon_path="/++resource++mtr-icons/odg.png"
+            binary="True"
+            />
+
+  <mimetype name="OpenDocument Drawing Template"
+            mimetypes="application/vnd.oasis.opendocument.graphics-template
+                       application/vnd.sun.xml.draw.template"
+            extensions="otg std"
+            globs="*.otg *.std"
+            icon_path="/++resource++mtr-icons/otg.png"
+            binary="True"
+            />
+
+  <mimetype name="OpenDocument Presentation"
+            mimetypes="application/vnd.oasis.opendocument.presentation
+                       application/vnd.sun.xml.impress
+                       application/vnd.stardivision.impress
+                       application/x-starimpress"
+            extensions="odp sxi sdd"
+            globs="*.odp *.sxi *.sdd"
+            icon_path="/++resource++mtr-icons/odp.png"
+            binary="True"
+            />
+
+  <mimetype name="OpenDocument Presentation Template"
+            mimetypes="application/vnd.oasis.opendocument.presentation-template
+                       application/vnd.sun.xml.impress.template"
+            extensions="otp sti"
+            globs="*.otp *.sti"
+            icon_path="/++resource++mtr-icons/otp.png"
+            binary="True"
+            />
+
+  <mimetype name="OpenDocument Spreadsheet"
+            mimetypes="application/vnd.oasis.opendocument.spreadsheet
+                       application/vnd.sun.xml.calc
+                       application/vnd.stardivision.calc
+                       application/x-starcalc"
+            extensions="ods sxc sdc"
+            globs="*.ods *.sxc *.sdc"
+            icon_path="/++resource++mtr-icons/ods.png"
+            binary="True"
+            />
+
+  <mimetype name="OpenDocument Spreadsheet Template"
+            mimetypes="application/vnd.oasis.opendocument.spreadsheet-template
+                       application/vnd.sun.xml.calc.template"
+            extensions="ots stc"
+            globs="*.ots *.stc"
+            icon_path="/++resource++mtr-icons/ots.png"
+            binary="True"
+            />
+
+  <mimetype name="OpenDocument Chart"
+            mimetypes="application/vnd.oasis.opendocument.chart
+                       application/vnd.stardivision.chart
+                       application/x-starchart"
+            extensions="odc sds"
+            globs="*.odc *.sds"
+            icon_path="/++resource++mtr-icons/odc.png"
+            binary="True"
+            />
+
+  <mimetype name="OpenDocument Formula"
+            mimetypes="application/vnd.oasis.opendocument.formula"
+            extensions="odf"
+            globs="*.odf"
+            icon_path="/++resource++mtr-icons/oo-empty.png"
+            binary="True"
+            />
+
+  <mimetype name="OpenDocument Database"
+            mimetypes="application/vnd.oasis.opendocument.database"
+            extensions="odb"
+            globs="*.odb"
+            icon_path="/++resource++mtr-icons/odb.png"
+            binary="True"
+            />
+
+  <mimetype name="OpenDocument Image"
+            mimetypes="application/vnd.oasis.opendocument.image"
+            extensions="odi"
+            globs="*.odi"
+            icon_path="/++resource++mtr-icons/oo-empty.png"
+            binary="True"
+            />
+
+
+
+
+
+  <!-- OFFICE 2007 MIMETYPES -->
+
+  <mimetype name="Microsoft Office Word 2007 document"
+            mimetypes="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            globs="*.docx"
+            icon_path="doc.png"
+            />
+
+  <mimetype name="Office Word 2007 macro-enabled document"
+            mimetypes="application/vnd.ms-word.document.macroEnabled.12"
+            globs="*.docm"
+            icon_path="doc.png"
+            />
+
+  <mimetype name="application/vnd.openxmlformats-officedocument.wordprocessingml.template"
+            mimetypes="application/vnd.openxmlformats-officedocument.wordprocessingml.template"
+            globs="*.dotx"
+            icon_path="doc.png"
+            />
+
+  <mimetype name="Office Word 2007 macro-enabled document template"
+            mimetypes="application/vnd.ms-word.template.macroEnabled.12"
+            globs="*.dotm"
+            icon_path="doc.png"
+            />
+
+  <mimetype name="Microsoft Office Excel 2007 workbook"
+            mimetypes="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            globs="*.xlsx"
+            icon_path="xls.png"
+            />
+
+  <mimetype name="Office Excel 2007 macro-enabled workbook"
+            mimetypes="application/vnd.ms-excel.sheet.macroEnabled.12"
+            globs="*.xlsm"
+            icon_path="xls.png"
+            />
+
+  <mimetype name="application/vnd.openxmlformats-officedocument.spreadsheetml.template"
+            mimetypes="application/vnd.openxmlformats-officedocument.spreadsheetml.template"
+            globs="*.xltx"
+            icon_path="xls.png"
+            />
+
+  <mimetype name="Office Excel 2007 macro-enabled workbook template"
+            mimetypes="application/vnd.ms-excel.template.macroEnabled.12"
+            globs="*.xltm"
+            icon_path="xls.png"
+            />
+
+  <mimetype name="Office Excel 2007 binary workbook"
+            mimetypes="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            globs="*.xlsx"
+            icon_path="xls.png"
+            />
+
+  <mimetype name="Office Excel 2007 add-in"
+            mimetypes="application/vnd.ms-excel.addin.macroEnabled.12"
+            globs="*.xlam"
+            icon_path="xls.png"
+            />
+
+  <mimetype name="Microsoft Office PowerPoint 2007 presentation"
+            mimetypes="application/vnd.openxmlformats-officedocument.presentationml.presentation"
+            icon_path="ppt.png"
+            globs="*.pptx"
+            />
+
+  <mimetype name="Office PowerPoint 2007 macro-enabled presentation"
+            mimetypes="application/vnd.ms-powerpoint.presentation.macroEnabled.12"
+            globs="*.pptm"
+            icon_path="ppt.png"
+            />
+
+  <mimetype name="Office PowerPoint 2007 slide show"
+            mimetypes="application/vnd.openxmlformats-officedocument.presentationml.slideshow"
+            globs="*.ppsx"
+            icon_path="ppt.png"
+            />
+
+  <mimetype name="Office PowerPoint 2007 macro-enabled slide show"
+            mimetypes="application/vnd.ms-powerpoint.slideshow.macroEnabled.12"
+            globs="*.ppsm"
+            icon_path="ppt.png"
+            />
+
+  <mimetype name="Office PowerPoint 2007 template"
+            mimetypes="application/vnd.openxmlformats-officedocument.presentationml.template"
+            globs="*.potx"
+            icon_path="ppt.png"
+            />
+
+  <mimetype name="Office PowerPoint 2007 macro-enabled presentation template"
+            mimetypes="application/vnd.ms-powerpoint.template.macroEnabled.12"
+            globs="*.potm"
+            icon_path="ppt.png"
+            />
+
+  <mimetype name="Office PowerPoint 2007 add-in"
+            mimetypes="application/vnd.ms-powerpoint.addin.macroEnabled.12"
+            globs="*.ppam"
+            icon_path="ppt.png"
+            />
+
+  <mimetype name="Office PowerPoint 2007 slide"
+            mimetypes="application/vnd.openxmlformats-officedocument.presentationml.slide"
+            globs="*.sldx"
+            icon_path="ppt.png"
+            />
+
+  <mimetype name="Office PowerPoint 2007 macro-enabled slide"
+            mimetypes="application/vnd.ms-powerpoint.slide.macroEnabled.12"
+            globs="*.sldm"
+            icon_path="ppt.png"
+            />
+
+</object>

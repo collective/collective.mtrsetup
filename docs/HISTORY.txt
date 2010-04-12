@@ -5,6 +5,10 @@ Changelog
 1.0a1
 -----
 
+* Added updates for OpenOffice mimetypes (added new icons) and for Office 2007
+  mimetypes (using the old office-like icons).
+  [12.04.2010, jbaumann]
+  
 * Assuerd that the GS import/export adapter works on both, plone3 and plone4.
   Plone3's getToolByName returns the Tool, with plone4 it returns the Utility. The Tool and
   the Utility do not have the same interfaces and plone3 crashes when using the old-style

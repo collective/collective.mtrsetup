@@ -1,5 +1,30 @@
+collective.mtrsetup
+===================
+
 collective.mtrsetup provides a GenericSetup extension for importing and exporting mimetypes
 to / from the mimetypes registry.
+
+
+How to use
+----------
+
+* Add `collective.mtrsetup` as dependency to your `setup.py`
+* Add a zcml-include to your `configure.zcml` or `dependency.zcml`
+* Add a dependency to `profile-collective.mtrsetup:default` to your `metadata.xml` in your generic setup profile
+* Create a `mimetypes.xml` as showed below in your generic setup profile
+
+
+
+OpenOffice / Office 2007
+------------------------
+
+There is a additional generic setup profile provided in this 
+package (`profile-collective.mtrsetup:default`) which adds icons for OpenOffice (with
+backwards compatiblity to StarOffice) and adds the already used ms-office-icons to the
+new office 2007 mimetypes.
+The official Office 2007 icons are not added because of the license.
+
+
 
 Examples
 --------

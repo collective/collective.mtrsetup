@@ -14,7 +14,8 @@ collective.mtrsetup is a GenericSetup extension that provides import / export su
 >>> new_mimetypes = list(set(post_mimetypes) - set(pre_mimetypes))
 >>> deleted_mimetypes = list(set(pre_mimetypes) - set(post_mimetypes))
 
->>> len(new_mimetypes)==1
-True
->>> len(deleted_mimetypes)==1
-True
+>>> len(deleted_mimetypes)
+1
+>>> len(new_mimetypes)
+1
+

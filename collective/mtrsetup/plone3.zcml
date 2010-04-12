@@ -1,0 +1,11 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:five="http://namespaces.zope.org/five">
+
+  <adapter
+      factory=".handler.MimetypesRegistryNodeAdapter"
+      provides="Products.GenericSetup.interfaces.IBody"
+      for="Products.MimetypesRegistry.interfaces.IMimetypesRegistryTool
+           Products.GenericSetup.interfaces.ISetupEnviron"
+      />
+
+</configure>

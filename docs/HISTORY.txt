@@ -5,6 +5,12 @@ Changelog
 1.0a1
 -----
 
+* Assuerd that the GS import/export adapter works on both, plone3 and plone4.
+  Plone3's getToolByName returns the Tool, with plone4 it returns the Utility. The Tool and
+  the Utility do not have the same interfaces and plone3 crashes when using the old-style
+  utility interfaces for adapter registration - so we need to use a zcml:condition.
+  [12.04.2010, jbaumann]
+
 * Implemented exporting, added tests
   [09.04.2010, jbaumann]
   

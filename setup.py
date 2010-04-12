@@ -30,6 +30,7 @@ setup(name='collective.mtrsetup',
       install_requires=[
         'setuptools',
         'Products.GenericSetup',
+        'Products.MimetypesRegistry',
         'z3c.autoinclude',
         # -*- Extra requirements: -*-
         ],

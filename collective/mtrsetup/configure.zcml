@@ -1,16 +1,18 @@
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-           xmlns:five="http://namespaces.zope.org/five">
+           xmlns:five="http://namespaces.zope.org/five"
+           xmlns:zcml="http://namespaces.zope.org/zcml">
 
   <include package="z3c.autoinclude" file="meta.zcml" />
   <includeDependencies package="." />
 
-  <adapter
-      factory=".handler.MimetypesRegistryNodeAdapter"
-      provides="Products.GenericSetup.interfaces.IBody"
-      for="Products.MimetypesRegistry.interfaces.IMimetypesRegistry
-           Products.GenericSetup.interfaces.ISetupEnviron"
-      />
+  <!-- Plone3 -->
+  <include zcml:condition="not-have plone-4"
+           file="plone3.zcml" />
+
+  <!-- Plone4 -->
+  <include zcml:condition="have plone-4"
+           file="plone4.zcml" />
 
   <genericsetup:registerProfile
       name="default"

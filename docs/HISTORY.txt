@@ -2,8 +2,11 @@ Changelog
 =========
 
 
-1.0a3
------
+1.0
+---
+
+* Updated MANIFEST.in: added docs directory to release
+  [09.08.2010, jbaumann]
 
 
 1.0a2

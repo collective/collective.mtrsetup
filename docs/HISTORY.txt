@@ -4,7 +4,12 @@ Changelog
 
 1.1
 ---
-
+* In some Plone 3 setups "GenericSetup.mimetypes Require attributes"
+  warning appears, fixed by adding all required attr to a mimetype record. 
+  [07.02.2011, mathias.leimgruber]
+  
+* Added record for MS Project (Icon not included)
+  [07.02.2011, mathias.leimgruber]
 
 1.0
 ---

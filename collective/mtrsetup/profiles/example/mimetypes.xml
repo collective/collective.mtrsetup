@@ -144,116 +144,164 @@
 
   <mimetype name="Microsoft Office Word 2007 document"
             mimetypes="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            extensions="docx"
             globs="*.docx"
             icon_path="doc.png"
+            binary="True"
             />
 
   <mimetype name="Office Word 2007 macro-enabled document"
             mimetypes="application/vnd.ms-word.document.macroEnabled.12"
+            extensions="docm"
             globs="*.docm"
             icon_path="doc.png"
+            binary="True"
             />
 
   <mimetype name="application/vnd.openxmlformats-officedocument.wordprocessingml.template"
             mimetypes="application/vnd.openxmlformats-officedocument.wordprocessingml.template"
+            extensions="dotx"
             globs="*.dotx"
             icon_path="doc.png"
+            binary="True"
             />
 
   <mimetype name="Office Word 2007 macro-enabled document template"
             mimetypes="application/vnd.ms-word.template.macroEnabled.12"
+            extensions="dotm"
             globs="*.dotm"
             icon_path="doc.png"
+            binary="True"
             />
 
   <mimetype name="Microsoft Office Excel 2007 workbook"
             mimetypes="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            extensions="xlsx"
             globs="*.xlsx"
             icon_path="xls.png"
+            binary="True"
             />
 
   <mimetype name="Office Excel 2007 macro-enabled workbook"
             mimetypes="application/vnd.ms-excel.sheet.macroEnabled.12"
+            extensions="xlsm"
             globs="*.xlsm"
             icon_path="xls.png"
+            binary="True"
             />
 
   <mimetype name="application/vnd.openxmlformats-officedocument.spreadsheetml.template"
             mimetypes="application/vnd.openxmlformats-officedocument.spreadsheetml.template"
+            extensions="xltx"
             globs="*.xltx"
             icon_path="xls.png"
+            binary="True"
             />
 
   <mimetype name="Office Excel 2007 macro-enabled workbook template"
             mimetypes="application/vnd.ms-excel.template.macroEnabled.12"
+            extensions="xltm"
             globs="*.xltm"
             icon_path="xls.png"
+            binary="True"
             />
 
   <mimetype name="Office Excel 2007 binary workbook"
             mimetypes="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            extensions="xlsx"
             globs="*.xlsx"
             icon_path="xls.png"
+            binary="True"
             />
 
   <mimetype name="Office Excel 2007 add-in"
             mimetypes="application/vnd.ms-excel.addin.macroEnabled.12"
+            extensions="xlam"
             globs="*.xlam"
             icon_path="xls.png"
+            binary="True"
             />
 
   <mimetype name="Microsoft Office PowerPoint 2007 presentation"
             mimetypes="application/vnd.openxmlformats-officedocument.presentationml.presentation"
+            extensions="pptx"
             icon_path="ppt.png"
             globs="*.pptx"
+            binary="True"
             />
 
   <mimetype name="Office PowerPoint 2007 macro-enabled presentation"
             mimetypes="application/vnd.ms-powerpoint.presentation.macroEnabled.12"
+            extensions="pptm"
             globs="*.pptm"
             icon_path="ppt.png"
+            binary="True"
             />
 
   <mimetype name="Office PowerPoint 2007 slide show"
             mimetypes="application/vnd.openxmlformats-officedocument.presentationml.slideshow"
+            extensions="ppsx"
             globs="*.ppsx"
             icon_path="ppt.png"
+            binary="True"
             />
 
   <mimetype name="Office PowerPoint 2007 macro-enabled slide show"
             mimetypes="application/vnd.ms-powerpoint.slideshow.macroEnabled.12"
+            extensions="ppsm"
             globs="*.ppsm"
             icon_path="ppt.png"
+            binary="True"
             />
 
   <mimetype name="Office PowerPoint 2007 template"
             mimetypes="application/vnd.openxmlformats-officedocument.presentationml.template"
+            extensions="potx"
             globs="*.potx"
             icon_path="ppt.png"
+            binary="True"
             />
 
   <mimetype name="Office PowerPoint 2007 macro-enabled presentation template"
             mimetypes="application/vnd.ms-powerpoint.template.macroEnabled.12"
+            extensions="potm"
             globs="*.potm"
             icon_path="ppt.png"
+            binary="True"
             />
 
   <mimetype name="Office PowerPoint 2007 add-in"
             mimetypes="application/vnd.ms-powerpoint.addin.macroEnabled.12"
+            extensions="ppam"
             globs="*.ppam"
             icon_path="ppt.png"
+            binary="True"
             />
 
   <mimetype name="Office PowerPoint 2007 slide"
             mimetypes="application/vnd.openxmlformats-officedocument.presentationml.slide"
+            extensions="sldx"
             globs="*.sldx"
             icon_path="ppt.png"
+            binary="True"
             />
 
   <mimetype name="Office PowerPoint 2007 macro-enabled slide"
             mimetypes="application/vnd.ms-powerpoint.slide.macroEnabled.12"
+            extensions="sldm"
             globs="*.sldm"
             icon_path="ppt.png"
+            binary="True"
             />
 
+
+  <!-- More Office mimetypes -->
+
+  <mimetype name="MS Project"
+            mimetypes="application/vnd.ms-project"
+            extensions="mpp"
+            globs="*.mpp"
+            icon_path="mpp.png"
+            binary="True"
+              />
 </object>

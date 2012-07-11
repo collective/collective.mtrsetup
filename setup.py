@@ -12,7 +12,7 @@ tests_require = [
 setup(name='collective.mtrsetup',
       version=version,
       description="Extension for GenericSetup, adding support for import / export of mimetypes_registry",
-      long_description=open("collective/mtrsetup/README.txt").read() + "\n" + \
+      long_description=open("README.rst").read() + "\n" + \
           open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[

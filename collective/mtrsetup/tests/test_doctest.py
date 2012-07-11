@@ -9,7 +9,7 @@ from Testing import ZopeTestCase as ztc
 from collective.mtrsetup.tests import base
 
 functionl_doctest_files = [
-    'README.txt',
+    '../../README.rst',
     'tests/profile.txt',
     ]
 

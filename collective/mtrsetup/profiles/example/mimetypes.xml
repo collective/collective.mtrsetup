@@ -294,7 +294,6 @@
             binary="True"
             />
 
-
   <!-- More Office mimetypes -->
 
   <mimetype name="MS Project"
@@ -310,6 +309,13 @@
             extensions="rtf"
             globs="*.rtf"
             binary="True" 
-            icon_path="doc.png"/>      
+            icon_path="doc.png"/>
             
+  <mimetype name="CSV document"
+            mimetypes="text/csv"
+            extensions="csv"
+            globs="*.csv"
+            binary="False"
+            icon_path="xls.png"/>
+
 </object>

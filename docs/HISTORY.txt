@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.4 (Unreleased)
+----------------
+
+* Add csv mimetype in example profile.
+  [thomasdesvenain]
 
 1.3
 ---

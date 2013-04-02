@@ -60,7 +60,7 @@ profile:
 Now we should be able to export the current configuration:
 
     >>> print export_mimetypes_registry(registry)
-    <?xml version="1.0"?>
+    <?xml version="1.0"...?>
     <object name="mimetypes_registry" meta_type="MimeTypes Registry">
       <mimetype name="Any type" binary="True" extensions="any" globs="*.any"
           icon_path="any.png" mimetypes="image/any"/>
@@ -81,7 +81,7 @@ The above notiation just updates the mimetype record, where *image/any is the fi
 mimetype*:
 
     >>> print export_mimetypes_registry(registry)
-    <?xml version="1.0"?>
+    <?xml version="1.0"...?>
     <object name="mimetypes_registry" meta_type="MimeTypes Registry">
       <mimetype name="Any type" binary="True" extensions="any" globs="*.any"
           icon_path="any.png" mimetypes="image/any image/another"/>
@@ -98,7 +98,7 @@ Finally we can delete a mimetype by just adding the delete flag:
     >>> import_mimetypes_registry(registry, filedata)
     [(20, 'mimetypes', 'Mimetype imported: <DOM Element: object at ...>')]
     >>> print export_mimetypes_registry(registry)
-    <?xml version="1.0"?>
+    <?xml version="1.0"...?>
     <object name="mimetypes_registry" meta_type="MimeTypes Registry"/>
 
 

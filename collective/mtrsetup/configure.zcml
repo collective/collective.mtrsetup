@@ -2,7 +2,8 @@
            xmlns:browser="http://namespaces.zope.org/browser"
            xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
            xmlns:five="http://namespaces.zope.org/five"
-           xmlns:zcml="http://namespaces.zope.org/zcml">
+           xmlns:zcml="http://namespaces.zope.org/zcml"
+           i18n_domain="collective.mtrsetup">
 
   <include package="z3c.autoinclude" file="meta.zcml" />
   <includeDependencies package="." />

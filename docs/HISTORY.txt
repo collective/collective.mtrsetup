@@ -4,7 +4,8 @@ Changelog
 1.4.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Added mmap mimetype in example profile.
+  [thomasdesvenain]
 
 
 1.4.1 (2012-12-21)

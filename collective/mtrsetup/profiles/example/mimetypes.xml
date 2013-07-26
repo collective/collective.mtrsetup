@@ -318,4 +318,11 @@
             binary="False"
             icon_path="xls.png"/>
 
+  <mimetype name="MindManager Map File"
+            mimetypes="application/octet-stream"
+            extensions="mmap"
+            globs="*.mmap"
+            binary="True"
+            />
+
 </object>

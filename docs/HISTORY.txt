@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.4.2 (unreleased)
-------------------
+1.5 (2013-08-26)
+----------------
 
 - Added mmap mimetype in example profile.
   [thomasdesvenain]

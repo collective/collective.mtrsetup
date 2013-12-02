@@ -303,14 +303,14 @@
             icon_path="mpp.png"
             binary="True"
               />
-              
+
   <mimetype name="RTF document"
             mimetypes="application/rtf text/rtf"
             extensions="rtf"
             globs="*.rtf"
-            binary="True" 
+            binary="True"
             icon_path="doc.png"/>
-            
+
   <mimetype name="CSV document"
             mimetypes="text/csv"
             extensions="csv"
@@ -318,11 +318,20 @@
             binary="False"
             icon_path="xls.png"/>
 
+  <!-- Mind map mimetypes -->
+
   <mimetype name="MindManager Map File"
             mimetypes="application/octet-stream"
             extensions="mmap"
             globs="*.mmap"
             binary="True"
             />
+
+  <mimetype name="XMind Workbook"
+            binary="False"
+            extensions="xmind"
+            globs="*.xmind"
+            icon_path="application.png"
+            mimetypes="application/vnd.xmind.workbook"/>
 
 </object>

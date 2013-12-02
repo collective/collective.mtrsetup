@@ -4,7 +4,8 @@ Changelog
 1.6 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Added xmind mimetype in example profile.
+  [thomasdesvenain]
 
 
 1.5 (2013-08-26)
@@ -40,9 +41,9 @@ Changelog
 1.1
 ---
 * In some Plone 3 setups "GenericSetup.mimetypes Require attributes"
-  warning appears, fixed by adding all required attr to a mimetype record. 
+  warning appears, fixed by adding all required attr to a mimetype record.
   [07.02.2011, mathias.leimgruber]
-  
+
 * Added record for MS Project (Icon not included)
   [07.02.2011, mathias.leimgruber]
 
@@ -58,7 +59,7 @@ Changelog
 
 * Updated README.txt (rest)
   [12.04.2010, jbaumann]
-  
+
 
 1.0a1
 -----
@@ -66,7 +67,7 @@ Changelog
 * Added updates for OpenOffice mimetypes (added new icons) and for Office 2007
   mimetypes (using the old office-like icons).
   [12.04.2010, jbaumann]
-  
+
 * Assuerd that the GS import/export adapter works on both, plone3 and plone4.
   Plone3's getToolByName returns the Tool, with plone4 it returns the Utility. The Tool and
   the Utility do not have the same interfaces and plone3 crashes when using the old-style
@@ -75,11 +76,11 @@ Changelog
 
 * Implemented exporting, added tests
   [09.04.2010, jbaumann]
-  
+
 * Improved testing system
   [09.04.2010, jbaumann]
-  
+
 * Initial implementation
   [08.04.2010, jbaumann]
-  
+
 

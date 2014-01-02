@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.6 (unreleased)
-----------------
+1.5.1 (2014-01-02)
+------------------
 
 - Added xmind mimetype in example profile.
   [thomasdesvenain]

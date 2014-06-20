@@ -13,7 +13,7 @@
                        application/x-starwriter"
             extensions="odt sxw sdw"
             globs="*.odt *.sxw *.sdw"
-            icon_path="/++resource++mtr-icons/odt.png"
+            icon_path="++resource++mtr-icons/odt.png"
             binary="True"
             />
 
@@ -22,7 +22,7 @@
                        application/vnd.sun.xml.writer.template"
             extensions="ott stw"
             globs="*.ott *stw"
-            icon_path="/++resource++mtr-icons/ott.png"
+            icon_path="++resource++mtr-icons/ott.png"
             binary="True"
             />
 
@@ -30,7 +30,7 @@
             mimetypes="application/vnd.oasis.opendocument.text-web"
             extensions="oth"
             globs="*.oth"
-            icon_path="/++resource++mtr-icons/oth.png"
+            icon_path="++resource++mtr-icons/oth.png"
             binary="True"
             />
 
@@ -38,7 +38,7 @@
             mimetypes="application/vnd.oasis.opendocument.text-master"
             extensions="odm"
             globs="*.odm"
-            icon_path="/++resource++mtr-icons/oo-empty.png"
+            icon_path="++resource++mtr-icons/oo-empty.png"
             binary="True"
             />
 
@@ -49,7 +49,7 @@
                        application/x-stardraw"
             extensions="odg sxd sda"
             globs="*.odg *.sxd *.sda"
-            icon_path="/++resource++mtr-icons/odg.png"
+            icon_path="++resource++mtr-icons/odg.png"
             binary="True"
             />
 
@@ -58,7 +58,7 @@
                        application/vnd.sun.xml.draw.template"
             extensions="otg std"
             globs="*.otg *.std"
-            icon_path="/++resource++mtr-icons/otg.png"
+            icon_path="++resource++mtr-icons/otg.png"
             binary="True"
             />
 
@@ -69,7 +69,7 @@
                        application/x-starimpress"
             extensions="odp sxi sdd"
             globs="*.odp *.sxi *.sdd"
-            icon_path="/++resource++mtr-icons/odp.png"
+            icon_path="++resource++mtr-icons/odp.png"
             binary="True"
             />
 
@@ -78,7 +78,7 @@
                        application/vnd.sun.xml.impress.template"
             extensions="otp sti"
             globs="*.otp *.sti"
-            icon_path="/++resource++mtr-icons/otp.png"
+            icon_path="++resource++mtr-icons/otp.png"
             binary="True"
             />
 
@@ -89,7 +89,7 @@
                        application/x-starcalc"
             extensions="ods sxc sdc"
             globs="*.ods *.sxc *.sdc"
-            icon_path="/++resource++mtr-icons/ods.png"
+            icon_path="++resource++mtr-icons/ods.png"
             binary="True"
             />
 
@@ -98,7 +98,7 @@
                        application/vnd.sun.xml.calc.template"
             extensions="ots stc"
             globs="*.ots *.stc"
-            icon_path="/++resource++mtr-icons/ots.png"
+            icon_path="++resource++mtr-icons/ots.png"
             binary="True"
             />
 
@@ -108,7 +108,7 @@
                        application/x-starchart"
             extensions="odc sds"
             globs="*.odc *.sds"
-            icon_path="/++resource++mtr-icons/odc.png"
+            icon_path="++resource++mtr-icons/odc.png"
             binary="True"
             />
 
@@ -116,7 +116,7 @@
             mimetypes="application/vnd.oasis.opendocument.formula"
             extensions="odf"
             globs="*.odf"
-            icon_path="/++resource++mtr-icons/oo-empty.png"
+            icon_path="++resource++mtr-icons/oo-empty.png"
             binary="True"
             />
 
@@ -124,7 +124,7 @@
             mimetypes="application/vnd.oasis.opendocument.database"
             extensions="odb"
             globs="*.odb"
-            icon_path="/++resource++mtr-icons/odb.png"
+            icon_path="++resource++mtr-icons/odb.png"
             binary="True"
             />
 
@@ -132,7 +132,7 @@
             mimetypes="application/vnd.oasis.opendocument.image"
             extensions="odi"
             globs="*.odi"
-            icon_path="/++resource++mtr-icons/oo-empty.png"
+            icon_path="++resource++mtr-icons/oo-empty.png"
             binary="True"
             />
 

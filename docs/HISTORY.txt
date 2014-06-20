@@ -4,7 +4,9 @@ Changelog
 1.5.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fixed mimetype icon URLs to be relative
+  and not absolute from root
+  [keul]
 
 
 1.5.1 (2014-01-02)

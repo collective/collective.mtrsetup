@@ -51,11 +51,21 @@ profile:
     ... <object name="mimetypes_registry" meta_type="MimeTypes Registry">
     ...  <mimetype name="Any type" mimetypes="image/any"
     ...            extensions="any" globs="*.any" binary="True"
-    ...            icon_path="any.png" />
+    ...            icon_path="àny.png" />
     ... </object>
     ... """.strip()
     >>> import_mimetypes_registry(registry, filedata)
     [(20, 'mimetypes', 'Mimetype imported: <DOM Element: object at ...>')]
+
+Now we have just one mimetype correctly configured
+
+    >>> registry.list_mimetypes()
+    ['image/any']
+    >>> image_any = registry.lookup('image/any')
+    >>> image_any
+    (<mimetype image/any>,)
+    >>> print image_any[0].icon_path
+    àny.png
 
 Now we should be able to export the current configuration:
 
@@ -63,7 +73,7 @@ Now we should be able to export the current configuration:
     <?xml version="1.0"...?>
     <object name="mimetypes_registry" meta_type="MimeTypes Registry">
       <mimetype name="Any type" binary="True" extensions="any" globs="*.any"
-          icon_path="any.png" mimetypes="image/any"/>
+          icon_path="àny.png" mimetypes="image/any"/>
     </object>
 
 
@@ -84,7 +94,7 @@ mimetype*:
     <?xml version="1.0"...?>
     <object name="mimetypes_registry" meta_type="MimeTypes Registry">
       <mimetype name="Any type" binary="True" extensions="any" globs="*.any"
-          icon_path="any.png" mimetypes="image/any image/another"/>
+          icon_path="àny.png" mimetypes="image/any image/another"/>
     </object>
 
 

@@ -4,7 +4,9 @@ Changelog
 1.5.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- The mimetype values should be string not unicode,
+  especially for the icon_path
+  [ale-rt]
 
 
 1.5.2 (2014-06-20)
@@ -96,5 +98,3 @@ Changelog
 
 * Initial implementation
   [08.04.2010, jbaumann]
-
-

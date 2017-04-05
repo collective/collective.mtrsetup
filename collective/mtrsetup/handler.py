@@ -1,8 +1,10 @@
-from Products.MimetypesRegistry.interfaces import IMimetypesRegistryTool
+# coding=utf-8
 from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.utils import safe_unicode
 from Products.GenericSetup.utils import exportObjects
 from Products.GenericSetup.utils import importObjects
 from Products.GenericSetup.utils import XMLAdapterBase
+from Products.MimetypesRegistry.interfaces import IMimetypesRegistryTool
 import re
 
 _FILENAME = 'mimetypes.xml'
@@ -10,6 +12,19 @@ _NAME = 'mimetypes'
 _REG_ID = 'mimetypes_registry'
 _REG_TITLE = 'MimeTypes Registry'
 _BOOLEAN_OPTIONS = ('true', '1', 'on', 'yes')
+
+
+def fix_unicode(attrs):
+    ''' The values for the mimetype registry should be string non unicode
+    '''
+    for key in attrs:
+        value = attrs.get(key, '')
+        if isinstance(value, unicode):
+            attrs[key] = value.encode('utf8')
+        elif isinstance(value, tuple):
+            attrs[key] = map(safe_unicode, value)
+    return attrs
+
 
 class MimetypesRegistryNodeAdapter(XMLAdapterBase):
     """
@@ -33,6 +48,7 @@ class MimetypesRegistryNodeAdapter(XMLAdapterBase):
                 continue
             if not self._check_attributes(child, ('mimetypes',)):
                 continue
+
             id = self._get_as_tuple(child, 'mimetypes')[0]
             # check if it already exists
             existing_types = self.context.lookup(id)
@@ -53,7 +69,7 @@ class MimetypesRegistryNodeAdapter(XMLAdapterBase):
                     'binary' : self._get_as_boolean(child, 'binary', mt.binary),
                     'globs' : self._get_as_tuple(child, 'globs', mt.globs),
                     }
-                self.context.manage_editMimeType(**attrs)
+                self.context.manage_editMimeType(**fix_unicode(attrs))
             else:
                 # create a new one
                 if not self._check_attributes(child, ('name', 'mimetypes', 'extensions',
@@ -67,8 +83,8 @@ class MimetypesRegistryNodeAdapter(XMLAdapterBase):
                     'binary' : self._get_as_boolean(child, 'binary'),
                     'globs' : self._get_as_tuple(child, 'globs') or None,
                     }
-                self.context.manage_addMimeType(**attrs)
-                
+                self.context.manage_addMimeType(**fix_unicode(attrs))
+
     def _check_attributes(self, node, attrs):
         for attr in attrs:
             if not node.getAttribute(attr).strip():
@@ -106,11 +122,11 @@ class MimetypesRegistryNodeAdapter(XMLAdapterBase):
         self._logger.info('Mimetypes registry exported.')
         for type_ in self.context.mimetypes():
             node = self._doc.createElement('mimetype')
-            node.setAttribute('name', type_.name())
-            node.setAttribute('mimetypes', ' '.join(type_.mimetypes))
-            node.setAttribute('extensions', ' '.join(type_.extensions))
-            node.setAttribute('globs', ' '.join(type_.globs))
-            node.setAttribute('icon_path', type_.icon_path)
+            node.setAttribute('name', safe_unicode(type_.name()))
+            node.setAttribute('mimetypes', u' '.join(map(safe_unicode, type_.mimetypes)))  # noqa
+            node.setAttribute('extensions', u' '.join(map(safe_unicode, type_.extensions)))  # noqa
+            node.setAttribute('globs', u' '.join(map(safe_unicode, type_.globs)))  # noqa
+            node.setAttribute('icon_path', safe_unicode(type_.icon_path))
             node.setAttribute('binary', type_.binary and 'True' or 'False')
             fragment.appendChild(node)
         return fragment
@@ -124,6 +140,7 @@ def importMimetypes(context):
 
     importObjects(tool, '', context)
 
+
 def exportMimetypes(context):
     """Export mimetypes registry
     """
@@ -134,5 +151,3 @@ def exportMimetypes(context):
         logger.info('Nothing to export.')
         return
     exportObjects(tool, '', context)
-    
-

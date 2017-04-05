@@ -22,7 +22,8 @@ def fix_unicode(attrs):
         if isinstance(value, unicode):
             attrs[key] = value.encode('utf8')
         elif isinstance(value, tuple):
-            attrs[key] = map(safe_unicode, value)
+            attrs[key] = map(lambda val: val.encode('utf-8'),
+                             map(safe_unicode, value))
     return attrs
 
 

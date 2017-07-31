@@ -4,8 +4,7 @@ Changelog
 1.5.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Remove z3c.autoinclude:includeDependencies. [jone]
 
 1.5.3 (2017-04-05)
 ------------------

@@ -31,7 +31,6 @@ setup(name='collective.mtrsetup',
         'setuptools',
         'Products.GenericSetup',
         'Products.MimetypesRegistry',
-        'z3c.autoinclude',
         # -*- Extra requirements: -*-
         ],
       tests_require=tests_require,

@@ -5,9 +5,6 @@
            xmlns:zcml="http://namespaces.zope.org/zcml"
            i18n_domain="collective.mtrsetup">
 
-  <include package="z3c.autoinclude" file="meta.zcml" />
-  <includeDependencies package="." />
-
   <!-- Plone3 -->
   <include zcml:condition="not-have plone-4"
            file="plone3.zcml" />

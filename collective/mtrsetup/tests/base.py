@@ -8,84 +8,45 @@ slows down test runner startup.
 from xml.dom.minidom import parseString
 from StringIO import StringIO
 
-from Products.Five import zcml
-from Products.Five import fiveconfigure
-
-from Testing import ZopeTestCase as ztc
-
-from Products.PloneTestCase import PloneTestCase as ptc
-from Products.PloneTestCase.layer import onsetup
+from plone.app.testing import IntegrationTesting
+from plone.app.testing import PLONE_FIXTURE
+from plone.app.testing import PloneSandboxLayer
+from zope.configuration import xmlconfig
+from plone.testing import z2
 
 from collective.mtrsetup.handler import MimetypesRegistryNodeAdapter
 from Products.GenericSetup.tests.common import DummyImportContext
 from Products.GenericSetup.tests.common import DummyExportContext
 
-# When ZopeTestCase configures Zope, it will *not* auto-load products
-# in Products/. Instead, we have to use a statement such as:
-#   ztc.installProduct('SimpleAttachment')
-# This does *not* apply to products in eggs and Python packages (i.e.
-# not in the Products.*) namespace. For that, see below.
-# All of Plone's products are already set up by PloneTestCase.
 
+class MtrsetupLayer(PloneSandboxLayer):
+    defaultBases = (PLONE_FIXTURE, )
 
-@onsetup
-def setup_product():
-    """Set up the package and its dependencies.
+    def setUpZope(self, app, configurationContext):
+        xmlconfig.string(
+            '<configure xmlns="http://namespaces.zope.org/zope">'
+            '  <include package="z3c.autoinclude" file="meta.zcml" />'
+            '  <includePlugins package="plone" />'
+            '  <includePluginsOverrides package="plone" />'
+            '  <include package="collective.mtrsetup.tests" file="test.zcml" />'
+            '</configure>',
+            context=configurationContext)
 
-    The @onsetup decorator causes the execution of this body to be
-    deferred until the setup of the Plone site testing layer. We could
-    have created our own layer, but this is the easiest way for Plone
-    integration tests.
-    """
+        z2.installProduct(app, 'collective.mtrsetup')
 
-    # Load the ZCML configuration for the example.tests package.
-    # This can of course use <include /> to include other packages.
+    def setUpPloneSite(self, portal):
+        self.applyProfile(portal, "collective.mtrsetup:default")
 
-    fiveconfigure.debug_mode = True
-    import collective.mtrsetup
-    zcml.load_config('configure.zcml', collective.mtrsetup)
-    zcml.load_config('test.zcml', collective.mtrsetup.tests)
-    fiveconfigure.debug_mode = False
-
-    # We need to tell the testing framework that these products
-    # should be available. This can't happen until after we have loaded
-    # the ZCML. Thus, we do it here. Note the use of installPackage()
-    # instead of installProduct().
-    # This is *only* necessary for packages outside the Products.*
-    # namespace which are also declared as Zope 2 products, using
-    # <five:registerPackage /> in ZCML.
-
-    # We may also need to load dependencies, e.g.:
-    #   ztc.installPackage('borg.localrole')
-
-    ztc.installPackage('collective.mtrsetup')
-
-# The order here is important: We first call the (deferred) function
-# which installs the products we need for this product. Then, we let
-# PloneTestCase set up this product on installation.
-
-setup_product()
-ptc.setupPloneSite(products=['collective.mtrsetup'])
-
-
-class TestCase(ptc.PloneTestCase):
-    """We use this base class for all the tests in this package. If
-    necessary, we can put common utility or setup code in here. This
-    applies to unit test cases.
-    """
-
-
-class FunctionalTestCase(ptc.FunctionalTestCase):
-    """We use this class for functional integration tests that use
-    doctest syntax. Again, we can put basic common utility or setup
-    code in here.
-    """
-
-    def afterSetUp(self):
         roles = ('Member', 'Contributor')
-        self.portal.portal_membership.addMember('contributor',
-                                                'secret',
-                                                roles, [])
+        portal.portal_membership.addMember('contributor',
+                                           'secret',
+                                           roles, [])
+
+
+MTRSETUP_FIXTURE = MtrsetupLayer()
+MTRSETUP_INTEGRATION_TESTING = IntegrationTesting(
+    bases=(MTRSETUP_FIXTURE,), name="collective.mtrsetup:Integration")
+
 
 def purge_registry(registry):
     """ Deletes all mimetypes from the given mimetypes registry.
@@ -93,6 +54,7 @@ def purge_registry(registry):
     a = False
     for type_ in registry.mimetypes():
         registry.unregister(type_)
+
 
 def import_mimetypes_registry(registry, xml_filecontent):
     """ Imports the given xml filecontent directly into the mimetypes registry
@@ -105,6 +67,7 @@ def import_mimetypes_registry(registry, xml_filecontent):
     adapter = MimetypesRegistryNodeAdapter(registry, imp)
     adapter._importNode(node)
     return imp.getLogger(adapter._LOGGER_ID)._messages
+
 
 def export_mimetypes_registry(registry):
     """ Exports the mimetypes registry as xml string

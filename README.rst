@@ -37,7 +37,10 @@ Setup some testing stuff:
     >>> from collective.mtrsetup.tests.base import purge_registry
     >>> from collective.mtrsetup.tests.base import import_mimetypes_registry
     >>> from collective.mtrsetup.tests.base import export_mimetypes_registry
-    >>> registry = self.portal.mimetypes_registry
+    >>> from zope.component.hooks import getSite
+
+    >>> portal = getSite()
+    >>> registry = portal.mimetypes_registry
     >>> purge_registry(registry)
     >>> len(registry.mimetypes())
     0

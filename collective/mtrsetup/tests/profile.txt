@@ -1,10 +1,12 @@
 collective.mtrsetup is a GenericSetup extension that provides import / export support for the mimetypes_registry.
 
 
->>> mr = self.portal.mimetypes_registry
+>>> from zope.component.hooks import getSite
+>>> portal = getSite()
+>>> mr = portal.mimetypes_registry
 >>> pre_mimetypes = mr.mimetypes()[:]
 
->>> setup = self.portal.portal_setup
+>>> setup = portal.portal_setup
 >>> profile_id = 'profile-collective.mtrsetup.tests:test'
 >>> setup.runImportStepFromProfile(profile_id, 'mimetypes')
 {...}

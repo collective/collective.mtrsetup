@@ -1,28 +1,21 @@
-import unittest
+from collective.mtrsetup.tests.base import MTRSETUP_INTEGRATION_TESTING
+from plone.testing import layered
 import doctest
+import unittest
 
-#from zope.testing import doctestunit
-#from zope.component import testing, eventtesting
 
-from Testing import ZopeTestCase as ztc
+FLAGS = doctest.REPORT_ONLY_FIRST_FAILURE | doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
 
-from collective.mtrsetup.tests import base
-
-functionl_doctest_files = [
-    '../../README.rst',
-    'tests/profile.txt',
-    ]
 
 def test_suite():
-    return unittest.TestSuite([
-            # Demonstrate the main content types
-            ztc.ZopeDocFileSuite(
-                file_, package='collective.mtrsetup',
-                test_class=base.FunctionalTestCase,
-                optionflags=doctest.REPORT_ONLY_FIRST_FAILURE |
-                doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS)
-            for file_ in functionl_doctest_files
-            ])
+
+    suite = unittest.TestSuite()
+    suite.addTests([
+        layered(doctest.DocFileSuite('../../../README.rst', optionflags=FLAGS), layer=MTRSETUP_INTEGRATION_TESTING),
+        layered(doctest.DocFileSuite('../tests/profile.txt', optionflags=FLAGS), layer=MTRSETUP_INTEGRATION_TESTING),
+    ])
+    return suite
+
 
 if __name__ == '__main__':
     unittest.main(defaultTest='test_suite')

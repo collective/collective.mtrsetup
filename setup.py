@@ -6,7 +6,7 @@ version = '1.5.5.dev0'
 tests_require = [
     'Plone',
     'zope.testing',
-    'Products.PloneTestCase',
+    'plone.app.testing',
     ]
 
 setup(name='collective.mtrsetup',
@@ -16,6 +16,9 @@ setup(name='collective.mtrsetup',
           open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
+        "Framework :: Plone :: 4.2",
+        "Framework :: Plone :: 4.3",
+        "Framework :: Plone :: 5.1",
         "Programming Language :: Python",
         ],
       keywords='generic setup gs mimetypes registry import export',

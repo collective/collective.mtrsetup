@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.5.5 (unreleased)
+1.6.0 (2019-10-23)
 ------------------
 
 - Add Plone 5.1 support by replacing the old PloneTestCase with plone.app.testing [mathias.leimgruber]

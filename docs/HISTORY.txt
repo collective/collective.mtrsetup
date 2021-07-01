@@ -4,7 +4,12 @@ Changelog
 1.6.1 (unreleased)
 ------------------
 
+- check-manifest [ionlizarazu <ilizarazu@codesyntax.com>]
+
+- Update changelog [ionlizarazu <ilizarazu@codesyntax.com>]
+
 - modifications to get it running with plone 5.2 [ionlizarazu <ilizarazu@codesyntax.com>]
+
 
 
 

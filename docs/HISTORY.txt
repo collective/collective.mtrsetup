@@ -4,7 +4,10 @@ Changelog
 2.0.0b2 (unreleased)
 --------------------
 
-- Nothing changed yet.
+-  [ionlizarazu <ilizarazu@codesyntax.com>]
+
+- [ci skip] [ionlizarazu <ilizarazu@codesyntax.com>]
+
 
 
 2.0.0-b.1 (2021-07-01)

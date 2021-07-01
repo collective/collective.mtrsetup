@@ -5,3 +5,9 @@ include *.rst
 global-exclude *.pyc
 global-exclude *.mo
 global-exclude ._*
+
+# added by check-manifest
+include *.py
+include test-plone-4.2.x.cfg
+include test-plone-4.3.x.cfg
+include test-plone-5.1.x.cfg

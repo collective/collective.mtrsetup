@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = "2.0.0-b.1"
+version = "2.0.0b2.dev0"
 
 tests_require = [
     "Plone",

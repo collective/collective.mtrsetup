@@ -6,7 +6,7 @@ happens at module level, which makes it faster to run each test, but
 slows down test runner startup.
 """
 from xml.dom.minidom import parseString
-from StringIO import StringIO
+from six import StringIO
 
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PLONE_FIXTURE
@@ -20,7 +20,7 @@ from Products.GenericSetup.tests.common import DummyExportContext
 
 
 class MtrsetupLayer(PloneSandboxLayer):
-    defaultBases = (PLONE_FIXTURE, )
+    defaultBases = (PLONE_FIXTURE,)
 
     def setUpZope(self, app, configurationContext):
         xmlconfig.string(
@@ -29,36 +29,34 @@ class MtrsetupLayer(PloneSandboxLayer):
             '  <includePlugins package="plone" />'
             '  <includePluginsOverrides package="plone" />'
             '  <include package="collective.mtrsetup.tests" file="test.zcml" />'
-            '</configure>',
-            context=configurationContext)
+            "</configure>",
+            context=configurationContext,
+        )
 
-        z2.installProduct(app, 'collective.mtrsetup')
+        z2.installProduct(app, "collective.mtrsetup")
 
     def setUpPloneSite(self, portal):
         self.applyProfile(portal, "collective.mtrsetup:default")
 
-        roles = ('Member', 'Contributor')
-        portal.portal_membership.addMember('contributor',
-                                           'secret',
-                                           roles, [])
+        roles = ("Member", "Contributor")
+        portal.portal_membership.addMember("contributor", "secret", roles, [])
 
 
 MTRSETUP_FIXTURE = MtrsetupLayer()
 MTRSETUP_INTEGRATION_TESTING = IntegrationTesting(
-    bases=(MTRSETUP_FIXTURE,), name="collective.mtrsetup:Integration")
+    bases=(MTRSETUP_FIXTURE,), name="collective.mtrsetup:Integration"
+)
 
 
 def purge_registry(registry):
-    """ Deletes all mimetypes from the given mimetypes registry.
-    """
+    """Deletes all mimetypes from the given mimetypes registry."""
     a = False
     for type_ in registry.mimetypes():
         registry.unregister(type_)
 
 
 def import_mimetypes_registry(registry, xml_filecontent):
-    """ Imports the given xml filecontent directly into the mimetypes registry
-    """
+    """Imports the given xml filecontent directly into the mimetypes registry"""
     portal = registry.portal_url.getPortalObject()
     tool = portal.portal_setup
     imp = DummyImportContext(portal, purge=True, tool=tool)
@@ -70,14 +68,13 @@ def import_mimetypes_registry(registry, xml_filecontent):
 
 
 def export_mimetypes_registry(registry):
-    """ Exports the mimetypes registry as xml string
-    """
+    """Exports the mimetypes registry as xml string"""
     portal = registry.portal_url.getPortalObject()
     tool = portal.portal_setup
     imp = DummyExportContext(portal, tool=tool)
     adapter = MimetypesRegistryNodeAdapter(registry, imp)
     adapter._doc.appendChild(adapter._exportNode())
     writer = StringIO()
-    adapter._doc.writexml(writer, addindent='  ', newl='\n')
+    adapter._doc.writexml(writer, addindent="  ", newl="\n")
     writer.seek(0)
     return writer.read().strip()

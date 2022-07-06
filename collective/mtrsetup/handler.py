@@ -41,7 +41,7 @@ class MimetypesRegistryNodeAdapter(XMLAdapterBase):
         Import the object from the DOM node.
         """
         self._initProvider(node)
-        self._logger.info('Mimetype imported: %s' % `node`)
+        self._logger.info('Mimetype imported: %s' % 'node')
 
     def _initProvider(self, node):
         for child in node.childNodes:

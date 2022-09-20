@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0.0b3 (unreleased)
+2.0.0b3 (2022-09-20)
 --------------------
 
 - Update changelog [Nagore Ruiz de Escudero <nruiz@codesyntax.com>]

@@ -4,7 +4,24 @@ Changelog
 2.0.0b3 (unreleased)
 --------------------
 
+- Update changelog [Nagore Ruiz de Escudero <nruiz@codesyntax.com>]
+
 -  [ionlizarazu <ilizarazu@codesyntax.com>]
+
+- [ci skip] [ionlizarazu <ilizarazu@codesyntax.com>]
+
+- Preparing release 2.0.0b2 [ionlizarazu <ilizarazu@codesyntax.com>]
+
+-  [ionlizarazu <ilizarazu@codesyntax.com>]
+
+- [ci skip] [ionlizarazu <ilizarazu@codesyntax.com>]
+
+- Update changelog [ionlizarazu <ilizarazu@codesyntax.com>]
+
+-  [ionlizarazu <ilizarazu@codesyntax.com>]
+
+- [ci skip] [ionlizarazu <ilizarazu@codesyntax.com>]
+
 
 - [ci skip] [ionlizarazu <ilizarazu@codesyntax.com>]
 
